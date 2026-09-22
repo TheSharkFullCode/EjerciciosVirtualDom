@@ -1,16 +1,29 @@
-# React + Vite
+# virtualDom
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Formulario de perfil + consola de operaciones, construido con **React + Vite**.
 
-Currently, two official plugins are available:
+Proyecto de práctica para reforzar conceptos de React: `useState`, `useContext` y `React Router`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionalidades
 
-## React Compiler
+- **Formulario de perfil** (nombre, apellido, ciudad, país, género) con estado compartido vía Context — los datos persisten al navegar entre páginas.
+- **Navegación** entre `/` (formulario) y `/consola` (calculadora) con React Router, sin recargar la página.
+- **Selector de género** tipo "pills" con estado activo controlado.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the ESLint configuration
+- React 19
+- Vite
+- React Router DOM 7
+- Context API (`useContext`)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Cómo correrlo
+
+\`\`\`bash
+npm install
+npm run dev
+\`\`\`
+
+## Estado del proyecto
+
+🚧 En construcción — próximo paso: calculadora en tiempo real en `/consola`.
