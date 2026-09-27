@@ -14,11 +14,9 @@ function App() {
     <Routes>
       <Route path="/" element={ <FormPage/> } />
       <Route path="/consola" element={ <ConsolePage/> } />
-
     </Routes>
     </>
-    
-    
+        
   )
 }
 

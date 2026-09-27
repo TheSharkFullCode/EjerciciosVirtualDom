@@ -128,3 +128,59 @@ h1{
   font-weight: 600;
   box-shadow: 0 4px 14px rgba(255, 46, 166, 0.4);
 }
+
+
+.consola{
+  padding: 0 48px 40px;
+  max-width: 700px;
+}
+
+.operacion input{
+  width: 120px;
+  padding: 8px 12px;
+  background: #1e1030;
+  border: 1px solid #5a3a7a;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+}
+
+.operacion input:focus{
+  outline: none;
+  border-color: #e84393;
+  box-shadow: 0 0 0 3px rgba(232, 67, 147, 0.25);
+
+}
+
+.operacion span{
+  color: #e84393;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.consola h1{
+  padding: left 0; 
+  margin-left: 0;
+  
+}
+.operacion{
+
+  background:rgba(255, 255, 255, 0.05) ;
+  border: 1px solid rgba(232, 67, 147, 0.3);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom:  16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px ;
+
+}
+
+.operacion h3{
+  width: 100%;
+  margin: 0 0 4px;
+  color: #e84393;
+}
+

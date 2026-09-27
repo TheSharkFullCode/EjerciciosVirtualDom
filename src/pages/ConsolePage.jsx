@@ -1,20 +1,27 @@
 import {useState} from 'react'
 
 export default function ConsolePage() {
-    const [suma,setSuma]= useState({a: '', b: ''})
+
+    const [suma,setSuma]= useState({a:'', b: ''})
     const [resta,setResta] = useState({a:'',b:''})
     const [multiplicacion,setMultiplicacion] =useState({a: '',b: ''})
+    const [division, setDivision] = useState({a: '', b: ''})
+    
+    
+    const resultadoSuma = suma.a !== "" && suma.b !== "" ? Number(suma.a) + Number(suma.b):"";
+    const resultadoResta = resta.a !== "" && resta.b !== "" ? Number(resta.a)-Number(resta.b):"";
+    const resultadoMultiplicacion = multiplicacion.a !== "" && multiplicacion.b !== ""? Number(multiplicacion.a)*Number(multiplicacion.b):"";
+    let resultDivision = "";
 
-    const resultadoMultiplicacion = Number(multiplicacion.a)*Number(multiplicacion.b)
-
-
-
-    const resultadoSuma = Number(suma.a) + Number(suma.b)
-    const resultadoResta = Number(resta.a) - Number(resta.b)
+        if(division.a !== "" && division.b !== ""){
+            resultDivision = Number(division.b) === 0
+            ? "No puedes dividir entre 0"
+            : Number(division.a) / Number(division.b)   
+        }
 
   return (
     <>
-    <div>
+    <div className="consola">
         <h1>Página de Consola</h1>  
 
         <div className="operacion">
@@ -30,7 +37,7 @@ export default function ConsolePage() {
             value={suma.b}
             onChange={(e)=>setSuma({...suma, b:e.target.value})}/>
 
-            <span> = {resultadoSuma} </span>           
+            {resultadoSuma !== "" &&  <span> = {resultadoSuma} </span> }
 
         </div>
 
@@ -46,12 +53,12 @@ export default function ConsolePage() {
             <input type="number"
             value={resta.b}
             onChange={(e)=>setResta({...resta, b: e.target.value})} />
-            <span> = {resultadoResta}</span>
+            {resultadoResta !== "" &&  <span> = {resultadoResta}</span>}
 
         </div>
 
         <div className="operacion">
-            <h3>Multiplicacion</h3>
+            <h3>Multiplicación</h3>
 
             <input type="number"
             value={multiplicacion.a}
@@ -61,8 +68,24 @@ export default function ConsolePage() {
             <input type="number" 
             value={multiplicacion.b}
             onChange={(e)=>setMultiplicacion({...multiplicacion, b: e.target.value})}/>
-            <span>={resultadoMultiplicacion}</span>
+           { resultadoMultiplicacion !== "" && <span>={resultadoMultiplicacion}</span>}
         </div>
+
+        <div className="operacion">
+            <h3>División</h3>
+            
+            <input type="number"
+            value={division.a}
+            onChange={(e)=>setDivision({...division, a: e.target.value})} />
+
+            <span>/</span>
+            <input type="number"
+            value={division.b}
+            onChange={(e)=>setDivision({...division, b: e.target.value})} />
+            { resultDivision !== "" &&  <span> = {resultDivision} </span>}
+
+        </div>
+
     </div>
     </>
   )
